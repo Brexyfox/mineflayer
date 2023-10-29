@@ -58,11 +58,11 @@ for (const supportedVersion of mineflayer.testedVersions) {
           username: 'flatbot',
           viewDistance: 'tiny',
           port: PORT,
-          host: '127.0.0.1',
+          host: 'Drexyfox.aternos.me:22566',
           version: supportedVersion
         })
         commonTest(bot)
-        bot.test.port = PORT
+        bot.test.port = 22566
 
         console.log('starting bot')
         bot.once('spawn', () => {
@@ -83,13 +83,13 @@ for (const supportedVersion of mineflayer.testedVersions) {
             done(err)
             return
           }
-          propOverrides['server-port'] = PORT
+          propOverrides['Drexyfox.aternos.me:22566'] = PORT
           wrap.startServer(propOverrides, (err) => {
             if (err) return done(err)
             console.log(`pinging ${version.minecraftVersion} port : ${PORT}`)
             mc.ping({
               port: PORT,
-              host: '127.0.0.1',
+              host: 'Drexyfox.aternos.me:22566',
               version: supportedVersion
             }, (err, results) => {
               if (err) return done(err)
